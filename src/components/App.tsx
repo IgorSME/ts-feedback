@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import { FeedbackOptions } from './Feedback/Feedback';
 import { Statistics } from './Statistics/Statistics';
 import { Section } from './Section/Section';
@@ -20,7 +22,7 @@ export function App() {
     return positive ? Math.round(positive) : 0;
   };
 
-  const onLeaveFeedback = e => {
+  const onLeaveFeedback = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     switch (e.currentTarget.name) {
       case 'good':
         setGood(prevState => prevState + 1);
